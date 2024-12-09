@@ -1,0 +1,19 @@
+mat-toolbar {
+    position:sticky;
+    position: -webkit-sticky;
+    top: 0;
+    z-index: 1000;
+    background-color: #121212; /* fondo oscuro */
+    color: #ffffff;           /* texto blanco para contraste */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.5); /* sombra para darle profundidad */
+}
+
+
+mat-toolbar mat-icon {
+color: #e0e0e0; /* íconos en color claro */
+}
+
+mat-toolbar a[mat-button] {
+    color: #ffffff; /* texto blanco */
+  }
+  
