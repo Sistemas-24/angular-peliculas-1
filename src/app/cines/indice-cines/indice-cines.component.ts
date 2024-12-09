@@ -10,5 +10,5 @@ import { RouterLink } from '@angular/router';
   styleUrl: './indice-cines.component.css'
 })
 export class IndiceCinesComponent {
-
+  
 }
