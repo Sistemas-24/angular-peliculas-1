@@ -24,3 +24,8 @@ mat-form-field {
 .contenedor-botones {
     margin-top: 1rem;
 }
+
+#boton-borrar {
+    background-color: rgb(192, 40, 6); 
+    color: white;
+}

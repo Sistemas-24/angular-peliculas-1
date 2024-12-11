@@ -29,8 +29,7 @@ export class LandingPageComponent implements OnInit{
           fechaLanzamiento: new Date("2016-05-03"),
           precio: 300.99,
           poster: "https://upload.wikimedia.org/wikipedia/en/thumb/8/8b/Bad_Boys_Ride_or_Die_%282024%29_poster.jpg/220px-Bad_Boys_Ride_or_Die_%282024%29_poster.jpg",
-        },
-      ]
+        },];
 
       this.peliculasProximas = [
         {
@@ -50,8 +49,8 @@ export class LandingPageComponent implements OnInit{
           fechaLanzamiento: new Date("2016-05-03"),
           precio: 300.99,
           poster: "https://upload.wikimedia.org/wikipedia/en/thumb/e/ed/The_Flash_%28film%29_poster.jpg/220px-The_Flash_%28film%29_poster.jpg",
-        },
-      ]
+        },];
+
     }, 100);
   }
 
