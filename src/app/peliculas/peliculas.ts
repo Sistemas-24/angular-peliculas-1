@@ -11,4 +11,5 @@ export interface PeliculasCreacionDTO{
     fechaLanzamineto: Date;
     trailer: string;
     poster?: File;
+    generosIds?: number[]; 
 }

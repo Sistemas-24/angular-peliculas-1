@@ -8,10 +8,12 @@ import { RouterLink } from '@angular/router';
 import { InputImgComponent } from '../../compartidos/componentes/input-img/input-img.component';
 import { PeliculaDTO, PeliculasCreacionDTO } from '../peliculas';
 import moment from 'moment';
+import { SelectorMultipleDTO } from '../../compartidos/componentes/selector-multiple/SelectorMultipleModelo';
+import { SelectorMultipleComponent } from "../../compartidos/componentes/selector-multiple/selector-multiple.component";
 
 @Component({
   selector: 'app-formulario-peliculas',
-  imports: [MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatButtonModule, RouterLink, MatDatepickerModule, InputImgComponent],
+  imports: [MatFormFieldModule, ReactiveFormsModule, MatInputModule, MatButtonModule, RouterLink, MatDatepickerModule, InputImgComponent, SelectorMultipleComponent],
   templateUrl: './formulario-peliculas.component.html',
   styleUrl: './formulario-peliculas.component.css'
 })
@@ -22,7 +24,13 @@ export class FormularioPeliculasComponent implements OnInit{
       
     }
   }
-  
+
+  @Input({required: true})
+  generosNoSeleccionados!: SelectorMultipleDTO[];
+
+  @Input({required: true})
+  generosSeleccionados!: SelectorMultipleDTO[];
+
   @Input()
   modelo?: PeliculaDTO;
 
@@ -46,8 +54,13 @@ export class FormularioPeliculasComponent implements OnInit{
       return;
     }
 
-    const pelicula = this.form.value as PeliculasCreacionDTO;
+    const pelicula = this.form.value as PeliculasCreacionDTO;  
     pelicula.fechaLanzamineto = moment(pelicula.fechaLanzamineto).toDate();
+ 
+    const generosIds = this.generosSeleccionados.map(val=> val.llave);
+    pelicula.generosIds = generosIds;
+ 
+
     this.poteoFormulario.emit(pelicula);
   }
  
